@@ -1,18 +1,16 @@
 <template>
-  <div id="app" class="antialiased text-gray-900">
-    <div class="bg-gray-200 min-h-screen p-8 frex items-center justify-center">
-      <PropertyCard :property="property" />
-    </div>
-  </div>
+  <Navbar />
 </template>
 
 <script>
-import PropertyCard from './components/PropertyCard'
+// import PropertyCard from './components/PropertyCard';
+import Navbar from './components/Navbar';
 
 export default {
   name: 'App',
   components: {
-    PropertyCard
+    // PropertyCard,
+    Navbar,
   },
   data: () => ({
     property: {
