@@ -13,15 +13,32 @@
         </button>
       </div>
     </div>
-    <div :class="isOpen ? 'block' : 'hidden'" class="px-2 pt-2 pb-4 sm:flex">
-      <a href="#" class="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:ml-2" v-for="item of menuItems" :key="item">{{ item }}</a>
-    </div>
+    <nav :class="isOpen ? 'block' : 'hidden'" class="sm:block sm:py-3">
+      <div class="px-2 pt-2 pb-4 sm:flex sm:p-0">
+        <a href="#" class="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:ml-2" v-for="item of menuItems" :key="item">{{ item }}</a>
+        <AccountDropdown class="hidden sm:block sm:ml-5" />
+      </div>
+      <div class="px-4 py-5 border-t border-gray-800 sm:hidden">
+        <div class="flex items-center">
+          <img class="h-8 w-8 border-2 border-gray-600 rounded-full object-cover" src="https://images.unsplash.com/photo-1542178243-bc20204b769f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80" alt="">
+          <span class="ml-3 font-semibold text-white">Jhon Doe</span>
+        </div>
+        <div class="mt-4">
+          <a href="#" class="mt-2 block text-gray-400 hover:text-white">Account settings</a>
+          <a href="#" class="mt-2 block text-gray-400 hover:text-white">Support</a>
+          <a href="#" class="mt-2 block text-gray-400 hover:text-white">Sign out</a>
+        </div>
+      </div>
+    </nav>
   </header>
 </template>
 
 <script>
+import AccountDropdown from './AccountDropdown';
 export default {
-  name: "Navbar",
+  components: {
+    AccountDropdown,
+  },
   data() {
     return {
       isOpen: false,

@@ -1,22 +1,21 @@
 <template>
   <div id="app" class="antialiased text-gray-900">
-    <div class="bg-gray-800 min-h-screen py-32 px-6">
-    <AccountDropdown />  
+    <div>
+    <Navbar />
     </div>
   </div>
 </template>
 
 <script>
 // import PropertyCard from './components/PropertyCard';
-// import Navbar from './components/Navbar';
-import AccountDropdown from './components/AccountDropdown';
+import Navbar from './components/Navbar';
+// import AccountDropdown from './components/AccountDropdown';
 
 export default {
-  name: 'App',
   components: {
     // PropertyCard,
-    // Navbar,
-    AccountDropdown
+    Navbar,
+    // AccountDropdown
   },
   data: () => ({
     property: {
